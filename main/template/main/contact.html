@@ -1,0 +1,138 @@
+{% extends 'base.html' %} {% load static %}{% block title %} Legacy Technology LT | Contact Us
+{%endblock title %} 
+{% block bg %}
+          background-image: url('{% static 'main/contact_bg2.jpg' %}');
+{% endblock bg%}{% block header %}{% endblock%} {% block content %}
+<div class="container-fluid contact-page">
+  <h2 class="contact-page-header">CONTACT US</h2>
+  <hr>
+  <div style="padding: 3% 3% 0% 3%" class="contact-inner">
+    <div class="row" style="background: rgb(240, 231, 231)">
+      
+      <div class="col-md-6"><img  class="image-fluid" src="{% static 'main/contactus.svg' %}" height="300" width="400" alt=""></div>
+      <div class="col-md-6">
+        <form action="/contact" method="POST" class="contact-form">
+          <p>
+            <input type="text" name="name" placeholder="Your Name" />
+          </p>
+          <p>
+            <input type="email" name="sender" placeholder="Email Address" />
+          </p>
+
+          <p>
+            <textarea
+              name="message"
+              id=""
+              cols="30"
+              rows="10"
+              placeholder="Your Message"
+            ></textarea>
+          </p>
+          <p>
+            <button class="btn contact-button" style="border:1px solid palevioletred;color:palevioletred">Send Message</button>
+          </p>
+          {% csrf_token %}
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<section>
+    <div class="container-fluid contact-social">
+        <div class="row">
+          
+          <div class="col-md-6">
+            <div class="call-us">
+              <p>
+                  <h3>
+                    <div class="row">
+                      <div class="col-2">
+                        <span><i class="fab fa-whatsapp"></i></span>
+                      </div>
+                      <div class="col-10" style="text-align: left;">
+                        Call /Whatsapp
+                      </div>
+                    </div>
+                     </h3>
+                  <ul>
+                    <li>
+                      <p> +2348160535033</p>
+                    </li>
+                    <li>
+                      <p>+2348168436745</p>
+                    </li>
+                </ul>
+                </p>
+                <p>
+                  <h3>
+                    <div class="row">
+                      <div class="col-2">
+                        <span><i class="far fa-map-marker-alt"></i></span>
+                      </div>
+                      <div class="col-10" style="text-align: left;">
+                        Locations
+                      </div>
+                    </div>
+                    </h3>
+                  <ul style="text-align: left;"><li>
+                  <p>Human right Radio, FCT Abuja, Nigeria</p>
+
+                  </li>
+                  <!-- <li>
+                    <p>ICT Center, Nassarawa state University, Keffi</p>
+                  </li> -->
+                </ul>            
+                </p>
+                <p>
+                  <h3>
+                    <div class="row">
+                      <div class="col-2">
+                        <span><i class="fal fa-briefcase"></i>
+                      </div>
+                      <div class="col-10" style="text-align:left">
+                      </span> Office Hour/ Days
+                    
+                      </div>
+                    </div>
+                  </h3>
+                  <p></p>
+                  <ul>
+                    <li>
+                      <p> 7:30AM - 10/11AM MON-FRI</p>
+                    </li>
+                    <li>
+                      <p>OFF - WeekEnd</p>
+                    </li>
+                </ul>
+                </p>
+            </div>
+          </div>
+          <div class="col-md-6 in-touch">
+            <h1 style="font-weight: bold; color: white">GET IN TOUCH</h1>
+            <p>
+              Be the first to be updated on issues coming up.
+    
+            </p>
+            <h4>Our Social Handle</h4>
+            <div class="social-link">
+              <span class="social-contact-link">
+                <a href="https://www.facebook.com/Legacy-Technology-LT-101549091734923"><i class="fab fa-facebook fa-2x about-fab"></i></a>
+              </span>
+              <span class="social-contact-link">
+                <a href="https://www.youtube.com/channel/UC5AqhAL2_A6iW2KmRSUDlCw"><i class="fab fa-youtube fa-2x about-fab"></i></a>
+              </span>
+              <span class="social-contact-link">
+                <a href=""><i class="fab fa-instagram fa-2x about-fab"></i></a>
+              </span>
+              <span class="social-contact-link">
+                <a href="https://twitter.com/dama_michael"><i class="fab fa-twitter fa-2x about-fab"></i></a>
+              </span>
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+</section>
+{% endblock content %}

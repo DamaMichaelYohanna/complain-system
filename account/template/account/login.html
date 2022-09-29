@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brekete | Login</title>
+    <!-- loading bootstrap offline -->
+    <link
+      rel="stylesheet"
+      href="{% static 'main/bootstrap/css/bootstrap.min.css' %}"
+    />
+    <script src="{% static 'main/bootstrap/js/bootstrap.bundle.js' %}"></script>
+  </head>
+  <body style="background-image: linear-gradient(white, rgb(238, 228, 210), whitesmoke, ghostwhite)">
+    <div class="container-fluid">
+      <div
+        class="login"
+        style="
+          margin: 4% auto;
+          background: rgb(224, 194, 224);
+          width: 30%;
+          padding: 2%;
+        "
+      >
+        <div class="row pt-1 pb-1 fw-bold"  style="
+        background-color: rgba(5, 5, 8, 0.7);margin:auto 0px;box-shadow: inset;color: white;
+      ">
+            <div class="col-8" style="margin-top: 3%;">
+                Enter Credentials
+
+            </div>
+            <div class="col-3">
+                <span class="">
+                    <img
+                      src="{% static 'account/login.png' %}"
+                      alt="login logo"
+                      style="height: 50px; width: 50px"
+                    />
+                  </span>
+            </div>
+        </div>
+          
+        </p>
+        <hr />
+        {% for error in form.non_field_errors %}
+        <p class="alert alert-danger" role="alert">{{error}}</p>
+        {% endfor %}
+        <form action="login" method="post" class="">
+          <div class="form-floating mb-4">
+            <input
+              class="form-control"
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
+            />
+            <label for="">Username</label>
+          </div>
+          <div class="form-floating mb-5">
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              id="password"
+              placeholder="password"
+            />
+            <label for="">Password</label>
+          </div>
+          {% csrf_token %}
+          <button type="submit" style="width: 100%;" class="btn btn-outline-dark">Login</button>
+        </form>
+        <p class="mt-4">
+          First time here? create account
+          <a href="/account/create " class="fw-bold">Here</a>
+        </p>
+        <hr>
+        <p style="text-align: center;">
+            <a href="http://" class="btn alert-success">
+                Recover Lost password 
+            </a>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

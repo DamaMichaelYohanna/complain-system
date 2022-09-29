@@ -1,0 +1,142 @@
+/* Contact us page css */
+/* ============================= */
+.contact-page {
+    background: rgb(238, 232, 232);
+  }
+  
+  .contact-page-header {
+    padding: 2%;
+    text-align: center;
+  }
+  .contact-inner {
+    text-align: center;
+  }
+  
+  .contact-form {
+    background: rgb(238, 232, 232);
+    margin: 0% 5% 5%;
+    padding: 0% 5% 5%;
+  }
+  
+  .contact-form input,
+  textarea{
+    width: 100%;
+  }
+  
+  .contact-button{
+      width: 100%;
+  }
+  .contact-form input,
+  textarea {
+    border-radius: 5px;
+    background: ghostwhite;
+    padding: 4%;
+    border: none;
+  }
+  
+  .contact-social {
+    background: palevioletred;
+    padding: 4% 4% 0px;
+  }
+  
+  .call-us {
+    background: whitesmoke;
+    text-align: center;
+    position: relative;
+    top: -28%;
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+  }
+  .social-link{
+    color:white;
+  }
+  .social-contact-link{
+    margin: 10px;
+    color:white;
+  }
+  .social-contact-link a{
+    color:whitesmoke;
+  }
+  .call-us ul {
+    text-align: left;
+  }
+  .in-touch p{
+    color: white;
+    width:80%;
+    font-weight: bold;
+    font-family: Helvetica;
+  }
+  @media (max-width: 766px) {
+    .call-us {
+      position: static;
+      width: 100%;
+      text-align: left;
+      background: inherit;
+      color: white;
+      font-family: laksaman;
+    }
+    .contact-form {
+      margin: 5% 0% 5%;
+      padding: 5% 0% 5%;
+    }
+    .in-touch{
+      text-align: center;
+    }
+    .in-touch p{
+      width: 100%;
+    }
+  }
+  
+
+  /* Track complain page */
+  .complain-track{
+    background:rgb(238, 232, 232);
+  }
+  .track-header{
+    margin: auto; 
+    width: 60%;
+    text-align: center
+  }
+  .table{
+    color: palevioletred !important;
+  }
+  .no-complain{
+    text-align: center;
+  }
+  .filter{
+    background: palevioletred;
+    padding: 2%;
+    font-weight: bolder;
+    color: rgb(37, 29, 29);
+    margin:0px;
+  }
+  .filter-body{
+    background: rgb(255, 255, 255);;
+  }
+  .filter-body p{
+    margin:0px;
+  }
+  .filter-body a{
+    text-decoration: none;
+    color:rgb(231, 194, 194);
+    padding-left:2%;
+  }
+  .sep-hr{
+    margin-top:0px;
+  }
+  .appointment-body{
+    text-align: center;
+  }
+  .appointment-body img{
+    height: 250px;
+    width: 250px;
+  }
+  @media (max-width: 766px) {
+    .complain-track-inner {
+      padding:4% !important;
+    }
+    .track-header{
+      width: 100%;
+    }
+  }

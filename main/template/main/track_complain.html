@@ -1,0 +1,81 @@
+{% extends 'base.html' %}{% load static %} {% block content %}
+<div class="container-fluid complain-track">
+  <div>
+    <h2 class="contact-page-header">Track Your Complain Here</h2>
+    <p class="track-header">
+      You can track your complain here and see how far it has gone with possible
+      response for the Brekete Family Consultant.
+    </p>
+  </div>
+  <hr />
+  <div
+    class="container-fluid pt-4 ps-5 pe-5 complain-track-inner"
+    style="background: white"
+  >
+    <div class="row">
+      <div class="col-md-8" style="background: white">
+        {% if complain %}
+        <table class="table">
+          <tr>
+            <th>Complain Topic</th>
+            <th>Progress</th>
+            <th>Action</th>
+          </tr>
+          {% for complain in complain %}
+          <tr>
+            <td><p>{{complain}}</p></td>
+            <td>{{complain.status}}</td>
+            <td></td>
+          </tr>
+          {% endfor %}
+        </table>
+        {% else %}
+        <div class="no-complain">
+          <p>No Complain Found</p>
+          <img src="{% static 'main/try.png' %}" alt="" />
+        </div>
+
+        {% endif %}
+      </div>
+      <div
+        class="col-md-4"
+        style="
+          background: white;
+          border: 1px solid rgb(206, 200, 200);
+          box-shadow: 0px 0px 5px #cfcaca;
+          padding: 0px;
+        "
+      >
+        <p class="filter">Filters</p>
+        <div class="filter-body">
+          <hr class="sep-hr" />
+          <p>
+            <a href="/complain/track?search=today">Today</a>
+          </p>
+          <hr />
+          <p>
+            <a href="/complain/track?search=seven days">Last seven days</a>
+          </p>
+          <hr />
+          <p>
+            <a href="/complain/track?search=thirty days">Last Thirty Days</a>
+          </p>
+          <hr />
+          <p>
+            <a href="/complain/track?search=last three month"
+              >Last Three Month</a
+            >
+          </p>
+          <hr style="margin-bottom: 0px" />
+        </div>
+
+        <p class="filter">Appointments.</p>
+        <div class="appointment-body">
+          <img src="{% static 'main/contactus.svg' %}" alt="" />
+          <p>You have no appointment.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends 'base.html' %}{% load static %} {% block title %} Brekete | Complain
+{% endblock %} {%block content %}
+<div class="container-fluid pb-4" style="background: rgb(213, 213, 228)">
+  <div
+    style="
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-shadow: 0px 12px 3px rgb(234, 234, 240);
+    "
+    class="pt-3 pb-3"
+  >
+    <h2 class="contact-page-header">Your welfare our concern.</h2>
+    <p style="width: 60%; margin: auto">
+      Kindly fill in your complain in the form provided below. do well to
+      provide all the necessary information and relevant documents.
+    </p>
+    <hr />
+  </div>
+  <div class="row pt-4">
+    <!-- first column -->
+    <div class="col-md-6">
+      <img
+        src="{% static 'main/_g.gif' %}"
+        alt="photo image"
+        style="border-radius: 1%; height: 100%; width: 100%"
+      />
+    </div>
+    <!-- second column -->
+    <div class="col-md-6 pt-3 pb-3">
+      <form
+        action="complain"
+        method="POST"
+        enctype="multipart/form-data"
+        class="contact-fom"
+      >
+        <p>
+          <label for="id_tittle">Title:</label>
+          <input
+            type="text"
+            name="title"
+            maxlength="300"
+            required
+            id="id_title"
+            class="form-control"
+            placeholder="Enter the title of your complain"
+          />
+        </p>
+
+        <p>
+          <label for="id_body">Body:</label>
+          <textarea
+            name="body"
+            cols="40"
+            rows="10"
+            required
+            id="id_body"
+            class="form-control"
+            placeholder="Enter your complain here"
+          ></textarea>
+        </p>
+
+        <p>
+          <label for="id_attachment">Attachment:</label>
+          <input
+            type="file"
+            name="attachment"
+            required
+            id="id_attachment"
+            class="form-control"
+          />
+        </p>
+        {% csrf_token %}
+        <button
+          class="btn btn-lg"
+          style="background: rgb(206, 199, 199) !important"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% block bg %} background-image:url('{%static 'main/bg1.jpg' %}'); {% endblock%}
+{%block header %} {%endblock%} {% endblock %}
