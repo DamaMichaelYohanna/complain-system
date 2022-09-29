@@ -1,9 +1,17 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
-# Create your views here.
+
+from main.models import Complain
+
+
+@login_required
 def all_complains(request):
-    return render(request, "")
+    complain = Complain.objects.all()
+    context = {"complain": complain}
+    return render(request, "administrator/all_complains.html", context)
 
 
-def verify():
-    return None
+@login_required
+def verify(request):
+    return render(request, "administrator/verify.html")

@@ -1,0 +1,9 @@
+{% extends 'administrator/admin-base.html' %} {% block title%} Admin Site |
+Home{% endblock %} {% block content %}
+<div class="container-fluid">
+  <div class="admin-header"><h3>Administrator's Home page</h3></div>
+</div>
+
+{% for complain in complain %}
+<p>{{complain}}</p>
+{% endfor %} {% endblock %}
