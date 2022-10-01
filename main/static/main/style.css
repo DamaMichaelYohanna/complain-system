@@ -99,13 +99,13 @@
     text-align: center
   }
   .table{
-    color: palevioletred !important;
+    color: tomato !important;
   }
   .no-complain{
     text-align: center;
   }
   .filter{
-    background: palevioletred;
+    background: tomato;
     padding: 2%;
     font-weight: bolder;
     color: rgb(37, 29, 29);

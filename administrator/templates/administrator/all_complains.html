@@ -3,7 +3,24 @@ Home{% endblock %} {% block content %}
 <div class="container-fluid">
   <div class="admin-header"><h3>Administrator's Home page</h3></div>
 </div>
-
+<div>
+  <table class="table">
+    <tr>
+      <th>Case Number</th>
+      <th>Date</th>
+      <th>Case Reporter</th>
+      <th>Case Status</th>
+      <th>Action</th>
+    </tr>
+    <tr>
+      <td>kd</td>
+      <td>dkfs</td>
+      <td>kdf</td>
+      <td>oir</td>
+      <td>jid</td>
+    </tr>
+  </table>
+</div>
 {% for complain in complain %}
 <p>{{complain}}</p>
 {% endfor %} {% endblock %}
