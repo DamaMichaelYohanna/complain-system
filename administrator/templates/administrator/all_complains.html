@@ -22,13 +22,16 @@ Home{% endblock %} {% block content %}
     <table class="table">
       <tr>
         <th>Case Number</th>
+        <td>Case Title</td>
         <th>Date</th>
         <th>Case Reporter</th>
         <th>Case Status</th>
         <th>Action</th>
       </tr>
+      {% for complain in complain %}
       <tr>
         <td>kd</td>
+        <td>{{complain}}</td>
         <td>dkfs</td>
         <td>kdf</td>
         <td>oir</td>
@@ -38,15 +41,14 @@ Home{% endblock %} {% block content %}
           >
           <a
             href=""
-            class="btn btn-light"
-            style="background-color: tomato; color: white"
+            class="btn btn-light btn-outlined"
+            style="border-color: tomato; color: tomato"
             >View Logs</a
           >
         </td>
       </tr>
+      {% endfor %}
     </table>
   </div>
 </div>
-{% for complain in complain %}
-<p>{{complain}}</p>
-{% endfor %} {% endblock %}
+{% endblock %}
