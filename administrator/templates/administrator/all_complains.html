@@ -3,33 +3,49 @@ Home{% endblock %} {% block content %}
 <div class="container-fluid">
   <div class="admin-header"><h3>Administrator's Home page</h3></div>
 </div>
-<div>
-  <table class="table">
-    <tr>
-      <th>Case Number</th>
-      <th>Date</th>
-      <th>Case Reporter</th>
-      <th>Case Status</th>
-      <th>Action</th>
-    </tr>
-    <tr>
-      <td>kd</td>
-      <td>dkfs</td>
-      <td>kdf</td>
-      <td>oir</td>
-      <td>
-        <a href="" class="btn btn-light" style="background-color: tomato"
-          >Case Report</a
-        >
-        <a
-          href=""
-          class="btn btn-light"
-          style="background-color: tomato; color: white"
-          >View Logs</a
-        >
-      </td>
-    </tr>
-  </table>
+<div class="ps-5 pe-5 pt-5 pb-5" style="background: #f8f8f8">
+  <div style="background-color: white; border-radius: 10px" class="ps-3 pt-3">
+    <div>
+      <span
+        style="
+          font-weight: bold;
+          box-shadow: 5px 5px 6px grey;
+          background-color: tomato;
+          color: white;
+          padding: 5px;
+        "
+      >
+        NEW/UNREAD CASE
+      </span>
+    </div>
+    <hr />
+    <table class="table">
+      <tr>
+        <th>Case Number</th>
+        <th>Date</th>
+        <th>Case Reporter</th>
+        <th>Case Status</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>kd</td>
+        <td>dkfs</td>
+        <td>kdf</td>
+        <td>oir</td>
+        <td>
+          <a href="" class="btn btn-light" style="background-color: tomato"
+            >Case Report</a
+          >
+          <a
+            href=""
+            class="btn btn-light"
+            style="background-color: tomato; color: white"
+            >View Logs</a
+          >
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
 {% for complain in complain %}
 <p>{{complain}}</p>
