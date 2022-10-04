@@ -5,18 +5,31 @@ Home{% endblock %} {% block content %}
 </div>
 <div class="ps-5 pe-5 pt-5 pb-5" style="background: #f8f8f8">
   <div style="background-color: white; border-radius: 10px" class="ps-3 pt-3">
-    <div>
-      <span
-        style="
-          font-weight: bold;
-          box-shadow: 5px 5px 6px grey;
-          background-color: tomato;
-          color: white;
-          padding: 5px;
-        "
-      >
-        NEW/UNREAD CASE
-      </span>
+    <div class="row">
+      <div class="col-8">
+        <span
+          style="
+            font-weight: bold;
+            box-shadow: 5px 5px 6px grey;
+            background-color: tomato;
+            color: white;
+            padding: 5px;
+          "
+        >
+          NEW/UNREAD CASE
+        </span>
+      </div>
+
+      <div class="col-4">
+        <form action="" class="form">
+          <select name="filter" id="filter">
+            <option value="Today">Today</option>
+            <option value="seven">Last Seven Days</option>
+            <option value="Thirty">Last Thirty Days</option>
+          </select>
+          <input type="submit" value="submit" />
+        </form>
+      </div>
     </div>
     <hr />
     <table class="table">
@@ -25,12 +38,12 @@ Home{% endblock %} {% block content %}
         <th>Case Title</th>
         <th>Case Reporter</th>
         <th>Case Status</th>
-        <th>Date</th>
+        <th>Date/Time</th>
         <th>Action</th>
       </tr>
       {% for complain in complain %}
       <tr>
-        <td style="font-weight: bold"># {{complain.id}}</td>
+        <td style="font-weight: bold; color: tomato"># {{complain.id}}</td>
         <td>{{complain}}</td>
         <td>{{complain.owner}}</td>
         <td>{{complain.status}}</td>
