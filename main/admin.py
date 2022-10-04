@@ -1,6 +1,5 @@
 from django.contrib import admin
 
-from main.models import Complain, ComplainTrack
+from main.models import Complain
 
 admin.site.register(Complain)
-admin.site.register(ComplainTrack)
