@@ -21,7 +21,7 @@ Home{% endblock %} {% block content %}
           style="
             font-weight: bold;
             box-shadow: 5px 5px 6px grey;
-            background-color: tomato;
+            background-color: rgb(212, 46, 102);
             color: white;
             padding: 5px;
           "
@@ -53,19 +53,24 @@ Home{% endblock %} {% block content %}
       </tr>
       {% for complain in complain %}
       <tr>
-        <td style="font-weight: bold; color: tomato"># {{complain.id}}</td>
+        <td style="font-weight: bold; color: rgb(212, 46, 102)">
+          # {{complain.id}}
+        </td>
         <td>{{complain}}</td>
         <td>{{complain.owner}}</td>
         <td>{{complain.status}}</td>
         <td>{{complain.date}}</td>
         <td>
-          <a href="" class="btn btn-light" style="background-color: tomato"
+          <a
+            href=""
+            class="btn btn-light"
+            style="background-color: rgb(212, 46, 102)"
             >Case Report</a
           >
           <a
             href=""
             class="btn btn-light btn-outlined"
-            style="border-color: tomato; color: tomato"
+            style="border-color: rgb(212, 46, 102); color: rgb(212, 46, 102)"
             >View Logs</a
           >
         </td>
