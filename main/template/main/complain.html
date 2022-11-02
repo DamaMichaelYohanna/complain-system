@@ -1,40 +1,40 @@
 {% extends 'base.html' %}{% load static %} {% block title %} Brekete | Complain
 {% endblock %} {%block content %}
-<div class="container-fluid pb-4" style="background: rgb(213, 213, 228)">
+<div class="container-fluid pb-4" style="background: white">
   <div
     style="
       text-align: center;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       box-shadow: 0px 12px 3px rgb(234, 234, 240);
     "
-    class="pt-3 pb-3"
+    class="mt-3 mb-3"
   >
-    <h2 class="contact-page-header">Your welfare our concern.</h2>
-    <p style="width: 60%; margin: auto">
+    <h3 class="contact-page-header">Your welfare our concern.</h3>
+    <!-- <p style="width: 60%; margin: auto">
       Kindly fill in your complain in the form provided below. do well to
       provide all the necessary information and relevant documents.
-    </p>
+    </p> -->
     <hr />
   </div>
   <div class="row pt-4">
     <!-- first column -->
-    <div class="col-md-6">
+    <!-- <div class="col-md-6">
       <img
         src="{% static 'main/_g.gif' %}"
         alt="photo image"
         style="border-radius: 1%; height: 100%; width: 100%"
       />
-    </div>
+    </div> -->
     <!-- second column -->
-    <div class="col-md-6 pt-3 pb-3">
+    <div class="col-md pt-3 pb-3">
       <form
         action="complain"
         method="POST"
         enctype="multipart/form-data"
         class="contact-fom"
       >
-        <p>
-          <label for="id_tittle">Title:</label>
+        <div class="input-group mb-4">
+          <span class="input-group-text">Title</span>
           <input
             type="text"
             name="title"
@@ -44,10 +44,10 @@
             class="form-control"
             placeholder="Enter the title of your complain"
           />
-        </p>
+        </div>
 
-        <p>
-          <label for="id_body">Body:</label>
+        <div class="input-group mb-4">
+          <span class="input-group-text">Body</span>
           <textarea
             name="body"
             cols="40"
@@ -57,7 +57,7 @@
             class="form-control"
             placeholder="Enter your complain here"
           ></textarea>
-        </p>
+        </div>
 
         <p>
           <label for="id_attachment">Attachment:</label>
@@ -71,7 +71,7 @@
         </p>
         {% csrf_token %}
         <button
-          class="btn btn-lg"
+          class="btn btn-lg form-control"
           style="background: rgb(206, 199, 199) !important"
         >
           Submit
@@ -80,5 +80,4 @@
     </div>
   </div>
 </div>
-{% block bg %} background-image:url('{%static 'main/bg1.jpg' %}'); {% endblock%}
 {%block header %} {%endblock%} {% endblock %}

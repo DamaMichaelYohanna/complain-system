@@ -5,8 +5,11 @@
   }
   
   .contact-page-header {
-    padding: 2%;
+    padding: 0%;
     text-align: center;
+    color:white;
+    background:rgba(212, 46, 102, .7);
+    padding:1%;
   }
   .contact-inner {
     text-align: center;
