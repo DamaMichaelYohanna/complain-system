@@ -1,11 +1,10 @@
 {% extends 'base.html' %}{% load static %} {% block title %} Brekete | Complain
 {% endblock %} {%block content %}
-<div class="container-fluid pb-4" style="background: white">
+<div class="container-fluid complain-main" style="">
   <div
     style="
       text-align: center;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      box-shadow: 0px 12px 3px rgb(234, 234, 240);
     "
     class="mt-3 mb-3"
   >
@@ -14,27 +13,18 @@
       Kindly fill in your complain in the form provided below. do well to
       provide all the necessary information and relevant documents.
     </p> -->
-    <hr />
   </div>
-  <div class="row pt-4">
-    <!-- first column -->
-    <!-- <div class="col-md-6">
-      <img
-        src="{% static 'main/_g.gif' %}"
-        alt="photo image"
-        style="border-radius: 1%; height: 100%; width: 100%"
-      />
-    </div> -->
-    <!-- second column -->
-    <div class="col-md pt-3 pb-3">
+  <div class="form-parent">
+    <div class="inner-parent">
       <form
         action="complain"
         method="POST"
         enctype="multipart/form-data"
         class="contact-fom"
+        style=""
       >
         <div class="input-group mb-4">
-          <span class="input-group-text">Title</span>
+          <span class="input-group-text complain-input-label">Title</span>
           <input
             type="text"
             name="title"
@@ -47,7 +37,7 @@
         </div>
 
         <div class="input-group mb-4">
-          <span class="input-group-text">Body</span>
+          <span class="input-group-text complain-input-label">Body</span>
           <textarea
             name="body"
             cols="40"

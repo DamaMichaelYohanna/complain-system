@@ -143,3 +143,23 @@
       width: 100%;
     }
   }
+
+  /* Submit complain page */
+  /* ===================== */
+.complain-main{
+  margin:0px;
+  padding:0px;
+  background-color: #f9f9f9;
+}
+.form-parent{
+  padding: 3%;
+  background-color: #f9f9f9;
+}
+.inner-parent{
+  background-color: white;
+  padding: 3% 1%;
+}
+.complain-input-lable{
+    background: rgba(212, 46, 102, .7);
+    color:white;
+  }
