@@ -3,13 +3,13 @@
 {% block bg %}
           background-image: url('{% static 'main/contact_bg2.jpg' %}');
 {% endblock bg%}{% block header %}{% endblock%} {% block content %}
-<div class="container-fluid contact-page">
+<div class="container-fluid contact-page pt-4" style="background:white;">
   <h2 class="contact-page-header">CONTACT US</h2>
-  <hr>
-  <div style="padding: 3% 3% 0% 3%" class="contact-inner">
+  <!-- <hr> -->
+  <div style="" class="contact-inner">
     <div class="row" style="background: rgb(240, 231, 231)">
       
-      <div class="col-md-6"><img  class="image-fluid" src="{% static 'main/contactus.svg' %}" height="300" width="400" alt=""></div>
+      <div class="col-md-6 d-none d-md-block"><img  class="image-fluid" src="{% static 'main/contactus.svg' %}" height="300" width="400" alt=""></div>
       <div class="col-md-6">
         <form action="/contact" method="POST" class="contact-form">
           <p>
