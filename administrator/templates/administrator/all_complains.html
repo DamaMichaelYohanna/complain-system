@@ -3,6 +3,7 @@ Home{% endblock %} {% block content %}
 <div class="container-fluid">
   <div class="admin-header"><h3>Administrator's Home page</h3></div>
 </div>
+
 <div class="ps-5 pe-5 pt-5 pb-5" style="background: #f8f8f8">
   <div>
     <div class="row">
@@ -14,8 +15,75 @@ Home{% endblock %} {% block content %}
       <div class="col-4"></div>
     </div>
   </div>
+  <!-- begining of tab bar -->
+<section style="background-color:white;">
+  <ul class="nav nav-tabs mb-3" id="ex-with-icons" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="ex-with-icons-tab-1" data-mdb-toggle="tab" href="#tabs-1" role="tab"
+        aria-controls="ex-with-icons-tabs-1" aria-selected="true">
+        <i class="fas fa-chart-pie fa-fw me-2"></i>New/Unread Case</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="ex-with-icons-tab-2" data-mdb-toggle="tab" href="#tabs-2" role="tab"
+        aria-controls="ex-with-icons-tabs-2" aria-selected="false">
+        <i class="fas fa-chart-line fa-fw me-2"></i>Read/Processing Case</a>
+    </li>
+  </ul>
+  <!-- Tabs navs -->
+  
+  <!-- Tabs content -->
+  <div class="tab-content" id="ex-with-icons-content" >
+    <div class="tab-pane fade show active"
+     id="tabs-1" role="tabpanel" 
+     aria-labelledby="ex-with-icons-tab-1" style="background-color:white;">
+      <table class="table">
+        <tr>
+          <th>Case ID</th>
+          <th>Case Title</th>
+          <th>Case Reporter</th>
+          <th>Case Status</th>
+          <th>Date/Time</th>
+          <th>Action</th>
+        </tr>
+        {% for complain in complain %}
+        <tr>
+          <td style="font-weight: bold; color: rgb(212, 46, 102)">
+            # {{complain.id}}
+          </td>
+          <td>{{complain}}</td>
+          <td>{{complain.owner}}</td>
+          <td>{{complain.status}}</td>
+          <td>{{complain.date}}</td>
+          <td>
+            <a
+              href=""
+              class="btn btn-light"
+              style="background-color: rgb(212, 46, 102)"
+              >Case Report</a
+            >
+            <a
+              href=""
+              class="btn btn-light btn-outlined"
+              style="border-color: rgb(212, 46, 102); color: rgb(212, 46, 102)"
+              >View Logs</a
+            >
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <!-- tab two content begins here. -->
+    <div class="tab-pane fade" id="tabs-2" role="tabpanel" aria-labelledby="ex-with-icons-tab-2">
+      Tab 2 content
+    </div>
+  </div>
+  <!-- Tabs content -->
+</section>
+<!-- end of tab bar -->
+
   <div style="background-color: white; border-radius: 10px" class="ps-3 pt-3">
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-md-8">
         <span
           style="
@@ -28,7 +96,7 @@ Home{% endblock %} {% block content %}
         >
           NEW/UNREAD CASE
         </span>
-      </div>
+      </div> -->
 
       <div class="col-md-4 pt-3">
         <form action="" class="form">
@@ -42,41 +110,7 @@ Home{% endblock %} {% block content %}
       </div>
     </div>
     <hr />
-    <table class="table">
-      <tr>
-        <th>Case ID</th>
-        <th>Case Title</th>
-        <th>Case Reporter</th>
-        <th>Case Status</th>
-        <th>Date/Time</th>
-        <th>Action</th>
-      </tr>
-      {% for complain in complain %}
-      <tr>
-        <td style="font-weight: bold; color: rgb(212, 46, 102)">
-          # {{complain.id}}
-        </td>
-        <td>{{complain}}</td>
-        <td>{{complain.owner}}</td>
-        <td>{{complain.status}}</td>
-        <td>{{complain.date}}</td>
-        <td>
-          <a
-            href=""
-            class="btn btn-light"
-            style="background-color: rgb(212, 46, 102)"
-            >Case Report</a
-          >
-          <a
-            href=""
-            class="btn btn-light btn-outlined"
-            style="border-color: rgb(212, 46, 102); color: rgb(212, 46, 102)"
-            >View Logs</a
-          >
-        </td>
-      </tr>
-      {% endfor %}
-    </table>
+    
   </div>
 </div>
 {% endblock %}
