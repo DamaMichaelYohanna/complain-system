@@ -1,9 +1,5 @@
 {% extends 'administrator/admin-base.html' %} {% block title%} Admin Site |
 Home{% endblock %} {% block content %}
-<div class="container-fluid">
-  <div class="admin-header"><h3>Administrator's Home page</h3></div>
-</div>
-
 <div class="ps-5 pe-5 pt-5 pb-5" style="background: #f8f8f8">
   <div>
     <div class="row">
@@ -50,14 +46,14 @@ Home{% endblock %} {% block content %}
           <td style="font-weight: bold; color: rgb(212, 46, 102)">
             # {{complain.id}}
           </td>
-          <td>{{complain}}</td>
+          <td>{{complain|truncatewords:2}}</td>
           <td>{{complain.owner}}</td>
           <td>{{complain.status}}</td>
           <td class="d-none d-md-block">{{complain.date}}</td>
           <td>
             <a
               href=""
-              class="btn btn-light"
+              class="btn btn-light d-none d-md-bloc"
               style="background-color: rgb(212, 46, 102)"
               >Case Report</a
             >
