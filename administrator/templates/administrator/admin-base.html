@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} Admin Base title {% endblock %}</title>
+    <!-- box icon -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- link to bootstrap -->
     <link
       rel="stylesheet"
@@ -18,154 +23,71 @@
       rel="stylesheet"
       href="{% static 'administrator/admin.css' %}"
     />
+    <!-- additional css and js -->
+    <link rel="stylesheet" href="{% static 'administrator/another.css' %}" />
+    <script src="{% static '/administrator/another.js' %}"></script>
   </head>
-  <body>
+  <body id="body-pd">
     <section>
-      <body id="body-pd">
-        <header class="header" id="header">
-            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-            <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
-        </header>
-        <div class="l-navbar" id="nav-bar">
-            <nav class="nav">
-                <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">BBBootstrap</span> </a>
-                    <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> <a href="#" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Users</span> </a> <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Messages</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Bookmark</span> </a> <a href="#" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Files</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Stats</span> </a> </div>
-                </div> <a href="#" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
-            </nav>
+      <header class="header" id="header">
+        <div class="header_toggle">
+          <i class="bx bx-menu" id="header-toggle">ii</i>
         </div>
-        <!--Container Main start-->
-        <div class="height-100 bg-light">
-            <h4>Main Components</h4>
+        <div class="header_img">
+          <img src="https://i.imgur.com/hczKIze.jpg" alt="" />
         </div>
-        <!--Container Main end-->
-    </section>
-    <!-- <section>
-      <nav
-        class="navbar navbar-expand-lg navbar-light bg-light pt-2 pb-2"
-        style="background: rgb(234, 234, 240) !important"
-      >
-        <div class="container">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarToggler"
-            aria-controls="navbarToggler"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span
-              class="navbar-toggler-icon"
-              style="background-color: white; color: white"
-            ></span>
-          </button>
-          {% if user.is_authenticated %}
-          <a href="/administrator" class="navbar-brand"
-            ><img
-              src="{% static 'main/home.png' %}"
-              alt="Logo"
-              height="60"
-              width="60"
-            />
-            Brekete Family | Admin Site</a
-          >
-          <div class="navbar-collapse collapse" id="navbarToggler">
-            <ul class="navbar-nav me-auto">
-              <li class="navbar-item">
-                <a href="/administrator" class="nav-link"> Home</a>
-              </li>
-              <li class="navbar-item">
-                <a href="/" class="nav-link">User Site</a>
-              </li>
-              <li class="navbar-item">
-              <a href="/contact" class="nav-link">Contact us</a>
-            </li>
-            <li class="navbar-item">
-              <a href="/about" class="nav-link">About us</a>
-            </li>
-            </ul>
-            <span class="">
-              <a href="/account/logout" class="btn btn-outline-primary ms-5"
-                >Logout</a
-              >
-              {% else %}
-              <a href="/account/login" class="btn btn-dark ms-5">Login here</a>
-              {% endif %}
-            </span>
-          </div>
-        </div>
-      </nav>
-    </section> -->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3">
-          <section>
-            <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
-              <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-                <span class="fs-4">Sidebar</span>
+      </header>
+      <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+          <div>
+            <a href="#" class="nav_logo">
+              <i class="bx bx-layer nav_logo-icon"></i>
+              <span class="nav_logo-name">BBBootstrap</span>
+            </a>
+            <div class="nav_list">
+              <a href="#" class="nav_link active">
+                <i class="bx bx-grid-alt nav_icon"></i>
+                <span class="nav_name">Dashboard</span>
               </a>
-              <hr>
-              <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                  <a href="#" class="nav-link active" aria-current="page">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="nav-link link-dark">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-                    Dashboard
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="nav-link link-dark">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-                    Orders
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="nav-link link-dark">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-                    Products
-                  </a>
-                </li>
-                <li>
-                  <a href="#" class="nav-link link-dark">
-                    <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-                    Customers
-                  </a>
-                </li>
-              </ul>
-              <hr>
-              <div class="dropdown">
-                <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                  <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                  <strong>mdo</strong>
-                </a>
-                <ul class="dropdown-menu text-small shadow">
-                  <li><a class="dropdown-item" href="#">New project...</a></li>
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                  <li><a class="dropdown-item" href="#">Profile</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Sign out</a></li>
-                </ul>
-              </div>
+              <a href="#" class="nav_link">
+                <i class="bx bx-user nav_icon"></i>
+                <span class="nav_name">Users</span>
+              </a>
+              <a href="#" class="nav_link">
+                <i class="bx bx-message-square-detail nav_icon"></i>
+                <span class="nav_name">Messages</span>
+              </a>
+              <a href="#" class="nav_link">
+                <i class="bx bx-bookmark nav_icon"></i>
+                <span class="nav_name">Bookmark</span>
+              </a>
+              <a href="#" class="nav_link">
+                <i class="bx bx-folder nav_icon"></i>
+                <span class="nav_name">Files</span>
+              </a>
+              <a href="#" class="nav_link">
+                <i class="bx bx-bar-chart-alt-2 nav_icon"></i>
+                <span class="nav_name">Stats</span>
+              </a>
             </div>
-          </section>
-        </div>
-        <!-- end of side bar column -->
-
-        <div class="col-md-9">
-          {% block content %} {%endblock%}
-        </div>
+          </div>
+          <a href="#" class="nav_link">
+            <i class="bx bx-log-out nav_icon"></i>
+            <span class="nav_name">SignOut</span>
+          </a>
+        </nav>
       </div>
-    </div>
-    
-    <section>
-      
+      <!--Container Main start-->
+      <div class="height-100 bg-light">
+        {% block content %} {% endblock %}
+        <h4>Main Components</h4>
+      </div>
+      <!--Container Main end-->
     </section>
+
+    <!-- end of side bar column -->
+
+    <section></section>
     <footer>
       <div class="container">
         <footer
