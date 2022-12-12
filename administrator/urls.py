@@ -3,4 +3,6 @@ from administrator import views
 urlpatterns = [
     path("", views.all_complains, name="complains"),
     path('verify', views.verify, name="verify complain"),
+    path('login', views.login),
+    path('tables', views.tables),
 ]

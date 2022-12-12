@@ -46,33 +46,7 @@ def contact(request):
 
 @login_required
 def track_complain(request):
-    if request.method == "GET":
-        filter_key = request.GET.get("search")
-        if filter_key:
-            if filter_key == "today":  # filter record for today only
-                today = datetime.datetime.today().date()
-                print(today)
-                tracked_complain = Complain.objects.filter(owner=request.user,
-                                                           date=today)
-            elif filter_key == 'seven days':  # filter record for the pass seven days
-                last_seven_days = datetime.datetime.today() - datetime.timedelta(days=7)
-                print(last_seven_days)
-                tracked_complain = Complain.objects.filter(owner=request.user,
-                                                           date__gt=last_seven_days.date())
-            elif filter_key == 'thirty days':  # filter record for the past 30 days.
-                last_month = datetime.datetime.today() - datetime.timedelta(days=30)
-                print(last_month)
-                tracked_complain = Complain.objects.filter(owner=request.user,
-                                                           date__gt=last_month.date())
-            elif filter_key == 'last three month':  # filter record for the past 90 days.
-                last_three_month = datetime.datetime.today() - datetime.timedelta(days=30)
-                tracked_complain = Complain.objects.filter(owner=request.user,
-                                                           date__gt=last_three_month)
-            else:
-                tracked_complain = Complain.objects.filter(owner=request.user)
-
-        else:
-            tracked_complain = Complain.objects.filter(owner=request.user)
-
-        context = {'complain': tracked_complain}
-        return render(request, 'main/track_complain.html', context)
+   
+    tracked_complain = Complain.objects.all()
+    context = {'complain': tracked_complain}
+    return render(request, 'main/tables.html', context)
